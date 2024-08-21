@@ -1,22 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://blkbdn155idvx"]
+[gd_scene load_steps=2 format=3 uid="uid://blkbdn155idvx"]
 
 [ext_resource type="Script" path="res://NodeScripts/TestResourceNestingWithDefaults.cs" id="1_msjgk"]
-[ext_resource type="Script" path="res://CustomResources/ResourceGrandChild.cs" id="2_u7w28"]
-[ext_resource type="Script" path="res://CustomResources/ResourceChild.cs" id="3_2cmpq"]
-[ext_resource type="Script" path="res://CustomResources/ResourceHead.cs" id="4_qeysg"]
-
-[sub_resource type="Resource" id="Resource_4fx22"]
-script = ExtResource("2_u7w28")
-Y = 0
-
-[sub_resource type="Resource" id="Resource_ojatv"]
-script = ExtResource("3_2cmpq")
-resourceGrandChild = SubResource("Resource_4fx22")
-
-[sub_resource type="Resource" id="Resource_3qco8"]
-script = ExtResource("4_qeysg")
-resourceChild = SubResource("Resource_ojatv")
 
 [node name="TestResourceNestingWithDefaults" type="Node2D"]
 script = ExtResource("1_msjgk")
-resourceHead = SubResource("Resource_3qco8")
