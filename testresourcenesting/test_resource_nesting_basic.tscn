@@ -1,0 +1,22 @@
+[gd_scene load_steps=8 format=3 uid="uid://bo5kjhfk3sr2k"]
+
+[ext_resource type="Script" path="res://NodeScripts/TestResourceNestingBasic.cs" id="1_0myo5"]
+[ext_resource type="Script" path="res://CustomResources/ResourceGrandChild.cs" id="2_miot8"]
+[ext_resource type="Script" path="res://CustomResources/ResourceChild.cs" id="3_fqjee"]
+[ext_resource type="Script" path="res://CustomResources/ResourceHead.cs" id="4_ab6jx"]
+
+[sub_resource type="Resource" id="Resource_pmqqp"]
+script = ExtResource("2_miot8")
+Y = 0
+
+[sub_resource type="Resource" id="Resource_crgkn"]
+script = ExtResource("3_fqjee")
+resourceGrandChild = SubResource("Resource_pmqqp")
+
+[sub_resource type="Resource" id="Resource_8wvpa"]
+script = ExtResource("4_ab6jx")
+resourceChild = SubResource("Resource_crgkn")
+
+[node name="TestResourceNestingBasic" type="Node2D"]
+script = ExtResource("1_0myo5")
+resourceHead = SubResource("Resource_8wvpa")
