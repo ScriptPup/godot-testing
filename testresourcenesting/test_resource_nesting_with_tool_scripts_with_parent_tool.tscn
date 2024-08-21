@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dqmafvwt28hhl"]
+
+[node name="TestResourceNestingWithToolScriptsWithParentTool" type="Node2D"]
